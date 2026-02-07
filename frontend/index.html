@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 🤖Gt bot </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div class="app">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <button class="btn-new-chat" id="newChatBtn">+ New Chat</button>
+
+      <div class="chat-list" id="chatList">
+        <!-- Previous chats will be loaded here -->
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-footer" id="profileBtn">Profile</button>
+        <button class="btn-footer" id="settingsBtn">Settings</button>
+        <button class="btn-footer btn-theme" id="themeBtn" title="Toggle light/dark mode">
+          Dark mode
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CHAT AREA -->
+    <main class="main">
+      <div class="messages" id="messages">
+        <!-- Welcome message when no chat -->
+        <div class="welcome" id="welcome">
+          <h1>How can I help you today?</h1>
+          <p>Start a conversation by typing a message below.</p>
+        </div>
+      </div>
+
+      <!-- INPUT AREA - Fixed at bottom -->
+      <div class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="messageInput"
+            placeholder="Send a message…"
+            rows="1"
+            maxlength="4000"
+          ></textarea>
+          <button class="btn-send" id="sendBtn" disabled title="Send message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
