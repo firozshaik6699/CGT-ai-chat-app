@@ -1,11 +1,6 @@
 name: Build Docker Images
 
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - 'v*'
   workflow_dispatch:
 
 jobs:
