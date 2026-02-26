@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: chat-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=production
+    volumes:
+      - ./backend/instance:/app/instance
+    networks:
+      - chat-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: chat-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - chat-network
+    restart: unless-stopped
+
+networks:
+  chat-network:
+    driver: bridge
